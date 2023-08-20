@@ -8,9 +8,11 @@
 import Foundation
 import CoreLocation
 
-class WeatherManager {
+class WeatherManager : ObservableObject {
+    public static let shared = WeatherManager()
+    var system: Int = 0
     func getCurrentWeather(lat: CLLocationDegrees, long: CLLocationDegrees) async throws -> ResponseBody {
-        guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid=\("c7db4fe03ea68fc185a5016056d858c6")&units=matric") else {
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(long)&appid=\("c7db4fe03ea68fc185a5016056d858c6")&units=matric") else {
             fatalError("Missing URL / Invalid URL")
         }
         let urlRequest = URLRequest(url: url)
@@ -58,6 +60,15 @@ struct ResponseBody: Decodable {
         var deg: Double
     }
 }
+
+//func convert(_ temp: Double) -> Double {
+//    let celsius = temp - 273.5
+//    if system == 0 {
+//        return celsius
+//    } else {
+//        return celsius * 9 / 5 + 32
+//    }
+//}
 
 extension ResponseBody.MainResponse {
     var feelsLike: Double { return feels_like }

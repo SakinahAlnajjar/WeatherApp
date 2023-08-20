@@ -15,12 +15,12 @@ struct CustomView: View {
         VStack(alignment: .leading, spacing: 20) {
             HStack(spacing: 70){
                 VStack(alignment: .leading, spacing: 20){
-                    rowView(icon: "humidity", title: "Humidity", value: "\(weather?.main.humidity ??  0.0)") //(weather.main.humidity.roundDouble() + "%"))
-                    rowView(icon: "thermometer.high",title: "max temp", value: "\(weather?.main.tempMax ?? 0.0)")
+                    rowView(icon: "humidity", title: "Humidity", value: "\(weather?.main.humidity ??  0.0)%") //(weather.main.humidity.roundDouble() + "%"))
+                    rowView(icon: "thermometer.high",title: "max temp", value: "\(weather?.main.tempMax ?? 0.0)ْ")
                 }
                 VStack(alignment: .leading, spacing: 20) {
-                    rowView(icon: "wind",title: "Wind speed", value: "\(weather?.wind.speed ?? 0.0)")//  + "m/s"
-                    rowView(icon: "sparkles" ,title: "Feels like", value: "\(weather?.main.feelsLike ?? 0.0)")
+                    rowView(icon: "wind",title: "Wind speed", value: "\(weather?.wind.speed ?? 0.0)m/s")
+                    rowView(icon: "sparkles" ,title: "Feels like", value: "\(weather?.main.feelsLike ?? 0.0)%")
                 }
             }
         }

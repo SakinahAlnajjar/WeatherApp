@@ -1,46 +1,47 @@
 {
-   "coord":{
-      "lon":46.6856,
-      "lat":24.7047
-   },
-   "weather":[
-      {
-         "id":801,
-         "main":"Clouds",
-         "description":"few clouds",
-         "icon":"02n"
-      }
-   ],
-   "base":"stations",
-   "main":{
-      "temp":312.2,
-      "feels_like":309.68,
-      "temp_min":312.2,
-      "temp_max":312.2,
-      "pressure":1002,
-      "humidity":13,
-      "sea_level":1002,
-      "grnd_level":937
-   },
-   "visibility":10000,
-   "wind":{
-      "speed":5.16,
-      "deg":137,
-      "gust":8.23
-   },
-   "clouds":{
-      "all":11
-   },
-   "dt":1692379006,
-   "sys":{
-      "type":1,
-      "id":7424,
-      "country":"SA",
-      "sunrise":1692325725,
-      "sunset":1692372361
-   },
-   "timezone":10800,
-   "id":108410,
-   "name":"Riyadh",
-   "cod":200
+    "coord":
+    {
+        "lon":46.7167,
+        "lat":24.4},
+    "weather":[
+        {
+            "id":801,
+            "main":"Clouds",
+            "description":"few clouds",
+            "icon":"02d"
+        }
+    ],
+    "base":"stations",
+    "main":{
+        "temp":314.34,
+        "feels_like":311.55,
+        "temp_min":314.34,
+        "temp_max":314.34,
+        "pressure":1001,
+        "humidity":11,
+        "sea_level":1001,
+        "grnd_level":935
+    },
+    "visibility":10000,
+    "wind":{
+        "speed":2.9,
+        "deg":123,
+        "gust":3.32
+    },
+    "clouds":{
+        "all":12
+        
+    },
+    "dt":1692454295,
+    "sys":{
+        "country":"SA",
+        "sunrise":1692412164,
+        "sunset":1692458682
+        
+    },
+    "timezone":10800,
+    "id":448600,
+    "name":"Al Khālidīyah",
+    "cod":200
+    
 }
