@@ -12,6 +12,7 @@ struct Intro: View {
     @State var weather: ResponseBody?
     @StateObject var locationManager = LocationManager()
     
+    
     var body: some View {
         VStack {
             if let location = locationManager.location {

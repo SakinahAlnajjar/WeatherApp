@@ -22,6 +22,26 @@ class WeatherManager : ObservableObject {
         let decodedData = try JSONDecoder().decode(ResponseBody.self, from: data)
         return decodedData
     }
+    
+    func getCityWeather(city: String) async throws -> ResponseBody {
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\("c7db4fe03ea68fc185a5016056d858c6")&units=matric") else {
+            fatalError("Missing URL / Invalid URL")
+        }
+        let urlRequest = URLRequest(url: url)
+        let (data,response) = try await URLSession.shared.data(for: urlRequest)
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error fetching weather data") }
+        
+        let decodedData = try JSONDecoder().decode(ResponseBody.self, from: data)
+        return decodedData
+    }
+    func convert(_ temp: Double, systemInt : Int) -> Double {
+        let celsius = temp - 273.5
+        if systemInt == 0 {
+            return celsius
+        } else {
+            return celsius * 9 / 5 + 32
+        }
+    }
 }
 struct ResponseBody: Decodable {
     var coord: CoordinatesResponse
@@ -41,7 +61,7 @@ struct ResponseBody: Decodable {
         var description: String
         var icon: String
         var weathericon: URL {
-            let urlString = "https://openweathermap.org/img/wn/10d@2x.png"
+            let urlString = "https://openweathermap.org/img/wn/\(icon)@2x.png"
             return URL(string: urlString)!
         }
     }
@@ -60,16 +80,6 @@ struct ResponseBody: Decodable {
         var deg: Double
     }
 }
-
-//func convert(_ temp: Double) -> Double {
-//    let celsius = temp - 273.5
-//    if system == 0 {
-//        return celsius
-//    } else {
-//        return celsius * 9 / 5 + 32
-//    }
-//}
-
 extension ResponseBody.MainResponse {
     var feelsLike: Double { return feels_like }
     var tempMin: Double { return temp_min }

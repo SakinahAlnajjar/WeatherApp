@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F748FD002A92B7A100023A09 /* splashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F748FCFF2A92B7A100023A09 /* splashScreen.storyboard */; };
 		F763A7E92A8FB1FA00641F38 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763A7E82A8FB1FA00641F38 /* ModelData.swift */; };
 		F763A7EB2A8FB23800641F38 /* WeatherData.Json in Resources */ = {isa = PBXBuildFile; fileRef = F763A7EA2A8FB23800641F38 /* WeatherData.Json */; };
 		F763A7EF2A8FE11900641F38 /* Extision.swift in Sources */ = {isa = PBXBuildFile; fileRef = F763A7EE2A8FE11900641F38 /* Extision.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F748FCFF2A92B7A100023A09 /* splashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = splashScreen.storyboard; sourceTree = "<group>"; };
 		F763A7E82A8FB1FA00641F38 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		F763A7EA2A8FB23800641F38 /* WeatherData.Json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WeatherData.Json; sourceTree = "<group>"; };
 		F763A7EE2A8FE11900641F38 /* Extision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extision.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F763A7F62A913EC700641F38 /* Intro.swift */,
 				F763A7F82A913EE700641F38 /* InitialView.swift */,
 				F763A7FA2A91BD9000641F38 /* ListViewModel.swift */,
+				F748FCFF2A92B7A100023A09 /* splashScreen.storyboard */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F770EB572A8C09EB00748C2E /* Preview Assets.xcassets in Resources */,
+				F748FD002A92B7A100023A09 /* splashScreen.storyboard in Resources */,
 				F763A7EB2A8FB23800641F38 /* WeatherData.Json in Resources */,
 				F770EB542A8C09EB00748C2E /* Assets.xcassets in Resources */,
 			);
@@ -315,6 +319,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = splashScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -344,6 +349,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = splashScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

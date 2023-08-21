@@ -18,7 +18,6 @@ extension View {
         clipShape(RoundedCorner(radius: raduis , corner: corners))
     }
 }
-    
     struct RoundedCorner : Shape {
         
         var radius : CGFloat = .infinity
@@ -28,7 +27,6 @@ extension View {
             let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corner, cornerRadii: CGSize(width: radius, height: radius))
             return Path(path.cgPath)
         }
-        
     }
 //func endEditing() {
 //    sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)

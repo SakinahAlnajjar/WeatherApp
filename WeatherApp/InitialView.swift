@@ -10,7 +10,6 @@ import CoreLocationUI
 
 struct initialView: View {
     @EnvironmentObject var locationManager: LocationManager
-
     var body: some View {
         VStack {
             VStack(spacing: 20) {
@@ -35,7 +34,6 @@ struct initialView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
-
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
         initialView()

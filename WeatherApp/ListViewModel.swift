@@ -14,7 +14,6 @@ class ListViewModel: ObservableObject {
         let id = UUID().uuidString
         let errorString: String
     }
-
     @Published var forecasts: [ListViewModel] = []
     var appError: AppError? = nil
     @Published var isLoading: Bool = false
@@ -55,27 +54,8 @@ class ListViewModel: ObservableObject {
                     
                     print(error.localizedDescription)
                 }
-                //                if let lat = placemarks?.first?.location?.coordinate.latitude,
-                //                   let lon = placemarks?.first?.location?.coordinate.longitude {
-                //                    WeatherManager.getCurrentWeather; (string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\("c7db4fe03ea68fc185a5016056d858c6")&units=matric"); , dateDecodingStrategy: .secondsSince1970) { (result: Result<Forecast,APIService.APIError>) in
-                //                        switch result {
-                //                        case .success(let forecast):
-                //                            DispatchQueue.main.async {
-                //                                self.isLoading = false
-                //                                self.forecasts = forecast.daily.map { ListViewModel(forecast: $0, system: self.system)}
-                //                            }
-                //                        case .failure(let apiError):
-                //                            switch apiError {
-                //                            case .error(let errorString):
-                //                                self.isLoading = false
-                //                                self.appError = AppError(errorString: errorString)
-                //                                print(errorString)
-                //                            }
-                //                        }
-                //                    }
-                //                }
-                //            }
             }
         }
     }
 }
+                                    

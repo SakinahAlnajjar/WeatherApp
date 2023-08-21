@@ -8,15 +8,16 @@ import CoreLocation
 import SwiftUI
 
 struct WeatherScreen: View {
-    @StateObject private var forecastListVM = WeatherManager()
-    @State  private var searchTxt : String = ""
+    @StateObject private var forecastListVM2 = WeatherManager()
+    @StateObject private var forecastListVM = ListViewModel()
+    @State private var searchTxt : String = ""
+    @State private var selection : Int = 0
     var weather: ResponseBody
-    
     var body: some View {
         ZStack{
             Color.init(uiColor: UIColor(named: "bgColor") ?? .cyan).ignoresSafeArea()
             VStack {
-                Picker(selection: $forecastListVM.system, label: Text("System")) {
+                Picker(selection: $selection, label: Text("System")) {
                     Text("°C").tag(0)
                     Text("°F").tag(1)
                 }
@@ -50,21 +51,18 @@ struct WeatherScreen: View {
                 .padding(.top, 30)
                 
                 VStack(spacing: 5){
-                    Text("\(weather.main.temp)")
-                        .font(.system(size: 50,
+                    Text("\(forecastListVM2.convert(weather.main.temp, systemInt: selection).roundDouble())")
+                        .font(.system(size: 70,
                                       weight: .bold, design: .rounded))
-                        .padding(.top, 100)
-                    HStack(alignment: .center, spacing: 25){
-                        Image(systemName: "sun.max.fill")
-                            .resizable()
-                            .frame(width: 80, height: 80)
-                            .foregroundColor(.yellow)
+                        .padding(.top, 40)
+                    HStack(alignment: .center, spacing: 18){
+                        AsyncImage(url: weather.weather[0].weathericon)
+                            .frame(width: 150, height: 150)
                         Text("\(weather.weather[0].main)")
                             .font(.system(size: 30, weight: .bold, design: .rounded))
                     }
                 }
                 .foregroundColor(.white)
-                
                 Spacer()
                 
                 ZStack{
@@ -79,15 +77,27 @@ struct WeatherScreen: View {
                     }.padding()
                 }
             }.ignoresSafeArea(SafeAreaRegions.all, edges: .bottom)
-            
-            
+        }
+        .alert(item: $forecastListVM.appError) { appAlert in
+            Alert(title: Text("Error"),
+                  message: Text("""
+                    \(appAlert.errorString)
+                    Please try again later!
+                    """
+                               )
+            )
         }
     }
+//    func showNewitemForSearh( _ value : String){
+//        if searchTxt.isEmpty{
+//            searchTxt = selection
+//        } else{
+//            searchTxt = $selection.filter { i in  i.searchType.contains(value) }
+//        }
+//    }
+    
     
 }
-
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         WeatherScreen(weather: previewWeather)
