@@ -13,6 +13,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     @Published var location: CLLocationCoordinate2D?
     @Published var isLoading = false
+    @Published var isShowingAlert: Bool = false
     
     override init() {
         super.init()
